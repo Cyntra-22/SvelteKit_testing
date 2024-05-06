@@ -1,5 +1,10 @@
 <script lang="ts">
+    import Date from "$lib/Date.svelte";
+    let age: {years:string; months: string; days:string} = {years: "--", months:"--", days:"--"};
     
+    function handleAge(event: CustomEvent){
+        age = event.detail;
+    }
 </script>
 
 <style>
