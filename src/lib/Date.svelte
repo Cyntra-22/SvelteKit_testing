@@ -132,7 +132,7 @@
 	img{
 		width: 50px;
 		height: 25px;
-		padding-top: 12px;
+		padding-top: 15px;
 	}
 
 	.img-style:hover{

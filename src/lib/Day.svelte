@@ -8,7 +8,7 @@
 <style>
     input {
         margin-top: 7px;
-        width: 90px;
+        width: 80px;
         font-weight: bold;
         font-size: 24px;
     }

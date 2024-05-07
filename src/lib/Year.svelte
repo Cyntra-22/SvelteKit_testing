@@ -8,7 +8,7 @@
 <style>
     input {
         margin-top: 7px;
-        width: 90px;
+        width: 80px;
         font-weight: bold;
         font-size: 24px;
     }
@@ -39,7 +39,7 @@
 </style>
 
 <div>
-    <label for="dayInput">YEAR</label>
+    <label for="monthInput">YEAR</label>
 
     {#if error}
         <input type="number" placeholder="YYY" bind:value={value} on:input={handleInput} class="error-input" />

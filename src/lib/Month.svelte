@@ -8,9 +8,10 @@
 <style>
     input {
         margin-top: 7px;
-        width: 90px;
+        width: 80px;
         font-weight: bold;
         font-size: 24px;
+        margin-left: 15px;
     }
     .error-style {
         color: red;
@@ -39,7 +40,7 @@
 </style>
 
 <div>
-    <label for="dayInput">MONTH</label>
+    <label for="monthInput">MONTH</label>
 
     {#if error}
         <input type="number" placeholder="MM" bind:value={value} on:input={handleInput} class="error-input" />
