@@ -28,9 +28,7 @@
             margin-bottom: 30px;
             
         }
-        label {
-            margin-left: 15px;
-        }
+        
         .error-style {
             font-size: 10px;
             margin-left: 15px;
