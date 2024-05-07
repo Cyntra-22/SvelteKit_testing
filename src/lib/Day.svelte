@@ -37,7 +37,6 @@
 
 <div>
     <label for="dayInput">DAY</label>
-
     {#if error}
         <input type="number" placeholder="DD" bind:value={value} on:input={handleInput} class="error-input" />
         <p class="error-style">{error}</p>
