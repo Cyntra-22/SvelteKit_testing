@@ -24,10 +24,10 @@
 
     @media (min-width: 300px) and (max-width: 768px) {
         input {
-            width: 90%;
+            width: 80%;
             font-size: 15px;
             margin-bottom: 30px;
-            margin-left: 15px;
+            margin-left: 10px;
         }
         label {
             margin-left: 15px;
