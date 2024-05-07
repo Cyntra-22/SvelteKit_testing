@@ -23,11 +23,11 @@
     }
 
     .left-style{
-        margin-left: 15px;
+        margin-left: 22px;
     }
 
     label{
-        margin-left: 15px;
+        margin-left: 22px;
     }
 
     @media (min-width: 300px) and (max-width: 768px) {
