@@ -26,7 +26,7 @@
             width: 80%;
             font-size: 15px;
             margin-bottom: 30px;
-            margin-left: 10px;
+            
         }
         label {
             margin-left: 15px;
