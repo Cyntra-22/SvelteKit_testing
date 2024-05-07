@@ -26,6 +26,10 @@
         margin-left: 15px;
     }
 
+    label{
+        margin-left: 15px;
+    }
+
     @media (min-width: 300px) and (max-width: 768px) {
         input {
             width: 80%;
@@ -41,6 +45,10 @@
         .left-style{
         margin-left: 0px;
     }
+    
+        label{
+            margin-left: 0px;
+        }
     }
 </style>
 
