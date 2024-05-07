@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { validateDay, validateMonth, validateYear } from '$lib/validation';
     import { createEventDispatcher } from 'svelte';
     import Day from '$lib/Day.svelte';
     import Month from '$lib/Month.svelte';
@@ -14,6 +15,18 @@
 
     const dispatch = createEventDispatcher();
 
+     function validateDate(): boolean {
+        const isValidDay = validateDay(day);
+        const isValidMonth = validateMonth(month);
+        const isValidYear = validateYear(year);
+
+        dayError = isValidDay ? '' : 'Invalid day';
+        monthError = isValidMonth ? '' : 'Invalid month';
+        yearError = isValidYear ? '' : 'Invalid year';
+
+        return isValidDay && isValidMonth && isValidYear;
+    }
+
     function handleInput(name:string, value:string): void {
         if (name === 'day') {
             day = value;
@@ -27,32 +40,7 @@
         }
     }
 
-    function validateDay(day:string): boolean {
-        const dayInt = parseInt(day, 10);
-        return dayInt >= 1 && dayInt <= 31;
-    }
-
-    function validateMonth(month:string): boolean {
-        const monthInt = parseInt(month, 10);
-        return monthInt >= 1 && monthInt <= 12;
-    }
-
-    function validateYear(year:string): boolean {
-        const yearInt = parseInt(year, 10);
-        return yearInt >= 1900 && yearInt <= 2100;
-    }
-
-    function validateDate(): boolean {
-        const isValidDay = validateDay(day);
-        const isValidMonth = validateMonth(month);
-        const isValidYear = validateYear(year);
-
-        dayError = isValidDay ? '' : 'Invalid day';
-        monthError = isValidMonth ? '' : 'Invalid month';
-        yearError = isValidYear ? '' : 'Invalid year';
-
-        return isValidDay && isValidMonth && isValidYear;
-    }
+    
 
     function calculation_Age() {
 		const correct = validateDate();
