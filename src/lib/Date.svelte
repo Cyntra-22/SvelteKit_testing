@@ -1,17 +1,18 @@
 <script lang="ts">
     import { validateDay, validateMonth, validateYear } from '$lib/validation';
     import { createEventDispatcher } from 'svelte';
-    import Day from '$lib/Day.svelte';
-    import Month from '$lib/Month.svelte';
-    import Year from '$lib/Year.svelte';
-
-    let day: string;
-    let month: string;
-    let year: string;
+    import Input from '$lib/Input.svelte';
+  
+    let day: number;
+    let month: number;
+    let year: number;
     let currentAge: {years: number; months: number; days: number} | undefined;
     let dayError = '';
     let monthError = '';
     let yearError = '';
+	let dayP = "DD";
+	let monthP = "MM";
+	let yearP = "YYY";
 
     const dispatch = createEventDispatcher();
 
@@ -27,7 +28,7 @@
         return isValidDay && isValidMonth && isValidYear;
     }
 
-    function handleInput(name:string, value:string): void {
+    function handleInput(name:string, value:number): void {
         if (name === 'day') {
             day = value;
             dayError = validateDay(value) ? '' : 'Invalid Day';
@@ -40,7 +41,6 @@
         }
     }
 
-    
 
     function calculation_Age() {
 		const correct = validateDate();
@@ -76,11 +76,11 @@
 		else{
 			setTimeout(() => {
             dayError = '';
-            day = '';
+            day = NaN;
             monthError = '';
-            month = '';
+            month = NaN;
             yearError = '';
-            year = '';
+            year = NaN;
         }, 1500);
     }
 }
@@ -154,9 +154,19 @@
 </style>
 
 <div class="date-container">
-    <Day value={day} error={dayError} handleInput={(e: any) => handleInput('day', e.target.value)} />
-    <Month value={month} error={monthError} handleInput={(e: any) => handleInput('month', e.target.value)} />
-    <Year value={year} error={yearError} handleInput={(e: any) => handleInput('year', e.target.value)} />
+	<div>
+		<label for="dayInput">DAY</label>
+		<Input value={day} placeholder={dayP} error={dayError} handleInput={(e: any) => handleInput('day', e.target.value) } />
+	</div>
+	<div>
+		<label for="monthInput">MONTH</label>
+		<Input value={month} placeholder={monthP} error={dayError} handleInput={(e: any) => handleInput('month', e.target.value)} />
+	</div>
+	<div>
+		<label for="yearInput">YEAR</label>
+		<Input value={year} placeholder={yearP} error={dayError} handleInput={(e: any) => handleInput('year', e.target.value)} />
+	</div>
+	
 </div>
 
 <div class="line-container">
@@ -165,5 +175,7 @@
 			<button on:click={calculation_Age}><img src="/icon-arrow.svg" alt="logo arrow" /></button>
 		</div>
 	<div class="line" id="display-line"></div>
-</div>	
+</div>
+
+
 

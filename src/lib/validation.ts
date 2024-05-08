@@ -1,14 +1,12 @@
-export function validateDay(day:string): boolean {
-        const dayInt = parseInt(day, 10);
-        return dayInt >= 1 && dayInt <= 31;
+export function validateDay(day:number): boolean {
+      return day >= 1 && day <= 31;
     }
 
-export function validateMonth(month:string): boolean {
-        const monthInt = parseInt(month, 10);
-        return monthInt >= 1 && monthInt <= 12;
+export function validateMonth(month:number): boolean {
+        return month >= 1 && month <= 12;
     }
 
-export function validateYear(year:string): boolean {
-        const yearInt = parseInt(year, 10);
-        return yearInt >= 1900 && yearInt <= 2100;
+export function validateYear(year:number): boolean {
+        return year >= 1900 && year <= 2100;
     }
+
